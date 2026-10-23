@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" d="width=device-width, initial-scale=1">
+  <title>Studio Bela Mão — Manicure e Pedicure</title>
+  <meta name="description" d="Agende online sua manicure ou pedicure. Escolha o serviço, o dia e o horário.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/tema.js"></script>
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="#inicio" id="marca-nome">Studio Bela Mão</a>
+    <div class="topo-acoes">
+      <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
+      <a class="btn btn-pequeno" href="#agendar">Agendar</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-texto">
+        <h1>Unhas feitas com calma, cuidado e esmalte que dura.</h1>
+        <p id="descricao">Manicure e pedicure em ambiente tranquilo, com horário marcado e atendimento só para você.</p>
+        <a class="btn" href="#agendar">Agendar agora</a>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <span class="unha" style="--cor:#b3315b"></span>
+        <span class="unha" style="--cor:#e9b7c6"></span>
+        <span class="unha" style="--cor:#3a2238"></span>
+      </div>
+    </section>
+
+    <section id="servicos" class="secao">
+      <h2>Serviços</h2>
+      <div id="lista-servicos" class="grid-servicos"></div>
+    </section>
+
+    <section id="agendar" class="secao">
+      <h2>Agende seu horário</h2>
+      <ol class="passos" id="passos">
+        <li>Serviço</li><li>Data</li><li>Horário</li><li>Seus dados</li><li>Confirmar</li>
+      </ol>
+
+      <div class="painel">
+        <div class="etapa" data-etapa="1">
+          <h3>Qual serviço você quer?</h3>
+          <div id="opcoes-servico" class="opcoes"></div>
+        </div>
+
+        <div class="etapa" data-etapa="2" hidden>
+          <h3>Escolha a data</h3>
+          <div id="calendario"></div>
+        </div>
+
+        <div class="etapa" data-etapa="3" hidden>
+          <h3>Escolha o horário</h3>
+          <p id="resumo-data" class="dica"></p>
+          <div id="horarios" class="horarios"></div>
+        </div>
+
+        <div class="etapa" data-etapa="4" hidden>
+          <h3>Seus dados</h3>
+          <label>Nome
+            <input id="nome" type="text" autocomplete="name" maxlength="80">
+          </label>
+          <label>Telefone / WhatsApp
+            <input id="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 91234-5678" maxlength="16">
+          </label>
+          <label>Observação (opcional)
+            <textarea id="observacao" rows="3" maxlength="300" placeholder="Ex.: prefiro esmalte nude"></textarea>
+          </label>
+        </div>
+
+        <div class="etapa" data-etapa="5" hidden>
+          <h3>Confira seu agendamento</h3>
+          <dl id="revisao" class="resumo"></dl>
+        </div>
+
+        <div class="etapa" data-etapa="6" hidden>
+          <div class="sucesso-icone" aria-hidden="true">
+            <svg class="selo-sucesso" viewBox="0 0 52 52">
+              <circle pathLength="1" cx="26" cy="26" r="24"></circle>
+              <path pathLength="1" d="M14 27l8 8 16-17"></path>
+            </svg>
+            <span class="brilho" style="--x:6%;--d:.55s"></span>
+            <span class="brilho" style="--x:24%;--d:.75s"></span>
+            <span class="brilho" style="--x:42%;--d:.6s"></span>
+            <span class="brilho" style="--x:60%;--d:.85s"></span>
+            <span class="brilho" style="--x:78%;--d:.65s"></span>
+            <span class="brilho" style="--x:92%;--d:.9s"></span>
+          </div>
+          <h3>Agendamento realizado</h3>
+          <p class="dica">Guarde o número abaixo. Se precisar mudar o horário, avise pelo WhatsApp.</p>
+          <dl id="sucesso" class="resumo"></dl>
+          <button type="button" class="btn btn-sec" id="btn-novo">Fazer outro agendamento</button>
+        </div>
+
+        <p id="mensagem" class="mensagem" role="alert" hidden></p>
+
+        <div class="acoes" id="acoes">
+          <button type="button" class="btn btn-sec" id="btn-voltar">Voltar</button>
+          <button type="button" class="btn" id="btn-avancar">Continuar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p id="rodape-nome">Studio Bela Mão</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="js/agendamento.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

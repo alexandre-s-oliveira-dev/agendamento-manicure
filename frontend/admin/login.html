@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Entrar — Painel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body class="pagina-login">
+  <button type="button" class="btn-tema btn-tema-fixo" data-alternar-tema aria-label="Alternar modo escuro"></button>
+
+  <div class="login-layout">
+    <aside class="login-arte" aria-hidden="true">
+      <!-- Troque o nome aqui se mudar o nome do estabelecimento (o do site fica em js/app.js) -->
+      <div class="login-marca">Studio Bela Mão</div>
+      <p class="login-frase">Cada horário bem cuidado, como cada unha.</p>
+      <div class="login-unhas">
+        <span class="unha" style="--cor:#ffffff"></span>
+        <span class="unha" style="--cor:#f6cdd9"></span>
+        <span class="unha" style="--cor:#ffe9f0"></span>
+      </div>
+    </aside>
+
+    <main class="login-caixa">
+      <h1>Bem-vinda de volta</h1>
+      <p class="dica">Entre para ver seus agendamentos.</p>
+      <form id="form-login" novalidate>
+        <label>E-mail
+          <input id="email" type="email" autocomplete="username" required>
+        </label>
+        <label>Senha
+          <div class="campo-senha">
+            <input id="senha" type="password" autocomplete="current-password" required>
+            <button type="button" class="ver-senha" id="ver-senha" aria-label="Mostrar ou ocultar a senha">Mostrar</button>
+          </div>
+        </label>
+        <p id="mensagem" class="mensagem" role="alert" hidden></p>
+        <button class="btn" type="submit" id="btn-entrar">Entrar</button>
+      </form>
+      <a class="login-voltar" href="../index.html">← Voltar ao site</a>
+    </main>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

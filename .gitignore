@@ -1,0 +1,32 @@
+# ===== SEGREDOS (nunca enviar para o GitHub) =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ===== Java / Maven =====
+target/
+*.class
+*.jar
+*.war
+*.log
+hs_err_pid*
+dependency-reduced-pom.xml
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+*.iws
+out/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== Sistema operacional =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Node (se usar "npx serve" ou ferramentas) =====
+node_modules/

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Painel — Agendamentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/tema.js"></script>
+</head>
+<body>
+  <header class="admin-topo">
+    <strong id="saudacao">Painel</strong>
+    <div class="topo-acoes">
+      <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="btn-sair">Sair</button>
+    </div>
+  </header>
+
+  <main class="admin-conteudo">
+    <nav class="abas" id="abas">
+      <button type="button" class="aba ativa" data-aba="resumo">Resumo</button>
+      <button type="button" class="aba" data-aba="calendario">Calendário</button>
+      <button type="button" class="aba" data-aba="servicos">Serviços</button>
+      <button type="button" class="aba" data-aba="horarios">Horários</button>
+      <button type="button" class="aba" data-aba="bloqueios">Bloqueios</button>
+    </nav>
+    <p id="mensagem" class="mensagem" role="alert" hidden></p>
+
+    <section id="aba-resumo">
+      <h2 id="titulo-hoje">Hoje</h2>
+      <div id="stats" class="stats"></div>
+      <h2 id="titulo-mes">Faturamento do mês</h2>
+      <div id="receita" class="receita"></div>
+      <h2>Agendamentos da semana</h2>
+      <div id="grafico-semana" class="grafico" role="img" aria-label="Gráfico de agendamentos por dia da semana"></div>
+      <h2>Próximos agendamentos</h2>
+      <ul id="lista-proximos" class="lista-agenda"></ul>
+    </section>
+
+    <section id="aba-calendario" hidden>
+      <div class="cal-barra">
+        <div class="modos" id="cal-modos">
+          <button type="button" data-modo="dia">Dia</button>
+          <button type="button" data-modo="semana">Semana</button>
+          <button type="button" data-modo="mes">Mês</button>
+        </div>
+        <div class="navegar">
+          <button type="button" class="cal-nav" id="cal-ant" aria-label="Anterior">‹</button>
+          <strong id="cal-rotulo"></strong>
+          <button type="button" class="cal-nav" id="cal-prox" aria-label="Próximo">›</button>
+          <button type="button" class="btn btn-sec btn-pequeno" id="cal-hoje">Hoje</button>
+        </div>
+      </div>
+      <div id="cal-conteudo"></div>
+    </section>
+
+    <section id="aba-servicos" hidden>
+      <div class="secao-topo">
+        <h2>Serviços</h2>
+        <button type="button" class="btn btn-pequeno" id="btn-novo-servico">Novo serviço</button>
+      </div>
+      <ul id="lista-servicos-admin" class="lista-agenda"></ul>
+    </section>
+
+    <section id="aba-horarios" hidden>
+      <h2>Horário de funcionamento</h2>
+      <p class="dica">Marque os dias em que você atende e defina os períodos. Para ter intervalo, use dois períodos (ex.: 08:00–12:00 e 14:00–18:00).</p>
+      <div id="horarios-dias"></div>
+    </section>
+
+    <section id="aba-bloqueios" hidden>
+      <h2>Bloquear horários</h2>
+      <div class="bloq-form">
+        <label>Data <input type="date" id="bloq-data"></label>
+        <label class="check"><input type="checkbox" id="bloq-dia" checked> Dia inteiro</label>
+        <div id="bloq-horas" class="bloq-horas" hidden>
+          <label>Das <input type="time" id="bloq-ini"></label>
+          <label>Às <input type="time" id="bloq-fim"></label>
+        </div>
+        <label>Motivo (opcional) <input type="text" id="bloq-motivo" maxlength="200" placeholder="Ex.: Não haverá atendimento"></label>
+        <button type="button" class="btn" id="btn-bloquear">Bloquear</button>
+        <p id="bloq-msg" class="mensagem" role="alert" hidden></p>
+      </div>
+      <h2>Bloqueios marcados</h2>
+      <ul id="lista-bloqueios" class="lista-agenda"></ul>
+    </section>
+  </main>
+
+  <dialog id="detalhe">
+    <h3>Agendamento <span id="det-numero"></span></h3>
+    <dl id="det-info" class="resumo"></dl>
+    <div id="remarcar" hidden>
+      <label>Nova data <input type="date" id="rem-data"></label>
+      <label>Novo horário <select id="rem-hora"></select></label>
+      <button type="button" class="btn btn-pequeno" id="btn-rem-salvar">Salvar nova data</button>
+    </div>
+    <p id="det-msg" class="mensagem" role="alert" hidden></p>
+    <div class="det-acoes">
+      <button type="button" class="btn btn-pequeno" id="btn-confirmar">Confirmar</button>
+      <button type="button" class="btn btn-pequeno" id="btn-concluir">Marcar como concluído</button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="btn-remarcar">Remarcar</button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="btn-cancelar">Cancelar agendamento</button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="btn-excluir">Excluir</button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="btn-fechar">Fechar</button>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-servico">
+    <h3 id="svc-titulo">Novo serviço</h3>
+    <label>Nome <input id="svc-nome" type="text" maxlength="100"></label>
+    <label>Descrição <textarea id="svc-desc" rows="2" maxlength="500"></textarea></label>
+    <label>Preço (R$) <input id="svc-preco" type="number" min="0" step="0.01" inputmode="decimal"></label>
+    <label>Duração (minutos) <input id="svc-dur" type="number" min="5" step="5" inputmode="numeric"></label>
+    <label class="check"><input id="svc-ativo" type="checkbox" checked> Serviço ativo (aparece para as clientes)</label>
+    <p id="svc-msg" class="mensagem" role="alert" hidden></p>
+    <div class="det-acoes">
+      <button type="button" class="btn btn-pequeno" id="svc-salvar">Salvar</button>
+      <button type="button" class="btn btn-sec btn-pequeno" id="svc-cancelar">Cancelar</button>
+    </div>
+  </dialog>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/painel-calendario.js"></script>
+  <script src="../js/painel-config.js"></script>
+  <script src="../js/painel.js"></script>
+</body>
+</html>

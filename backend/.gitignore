@@ -1,0 +1,10 @@
+# Segredos
+.env
+
+# Maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+out/
