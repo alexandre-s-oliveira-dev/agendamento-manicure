@@ -9,7 +9,8 @@ class ErroApi extends Error {
 }
 
 const API = (() => {
-  const CONFIG = { USE_MOCK: false, BASE_URL: "http://localhost:8080/api" };
+  const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
+  const CONFIG = { USE_MOCK: false, BASE_URL: LOCAL ? "http://localhost:8080/api" : "https://agendamento-manicure-35ed.onrender.com/api" };
   const CHAVE_TOKEN = "token_admin"; // o login da profissional fica só nesta aba (sessionStorage)
 
   /* ---------- utilidades ---------- */
