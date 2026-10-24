@@ -28,6 +28,7 @@
       <button type="button" class="aba" data-aba="servicos">Serviços</button>
       <button type="button" class="aba" data-aba="horarios">Horários</button>
       <button type="button" class="aba" data-aba="bloqueios">Bloqueios</button>
+      <button type="button" class="aba" data-aba="perfil">Meu perfil</button>
     </nav>
     <p id="mensagem" class="mensagem" role="alert" hidden></p>
 
@@ -89,6 +90,20 @@
       <h2>Bloqueios marcados</h2>
       <ul id="lista-bloqueios" class="lista-agenda"></ul>
     </section>
+
+    <section id="aba-perfil" hidden>
+      <h2>Meu perfil</h2>
+      <p class="dica">Aqui você muda seu nome, seu e-mail de login e sua senha. Para trocar o e-mail ou a senha, digite a senha atual.</p>
+      <div class="bloq-form">
+        <label>Nome <input type="text" id="perfil-nome" maxlength="100" autocomplete="name"></label>
+        <label>E-mail <input type="email" id="perfil-email" maxlength="150" autocomplete="username"></label>
+        <label>Senha atual <input type="password" id="perfil-atual" autocomplete="current-password"></label>
+        <label>Nova senha (deixe em branco para não mudar) <input type="password" id="perfil-nova" autocomplete="new-password"></label>
+        <label>Repita a nova senha <input type="password" id="perfil-repete" autocomplete="new-password"></label>
+        <button type="button" class="btn" id="btn-perfil-salvar">Salvar</button>
+        <p id="perfil-msg" class="mensagem" role="alert" hidden></p>
+      </div>
+    </section>
   </main>
 
   <dialog id="detalhe">
@@ -127,6 +142,7 @@
   <script src="../js/api.js"></script>
   <script src="../js/painel-calendario.js"></script>
   <script src="../js/painel-config.js"></script>
+  <script src="../js/painel-perfil.js"></script>
   <script src="../js/painel.js"></script>
 </body>
 </html>

@@ -26,9 +26,10 @@
   function trocarAba(nome) {
     $("mensagem").hidden = true;
     document.querySelectorAll("#abas .aba").forEach((b) => b.classList.toggle("ativa", b.dataset.aba === nome));
-    ["resumo", "calendario", "servicos", "horarios", "bloqueios"].forEach((a) => { $("aba-" + a).hidden = a !== nome; });
+    ["resumo", "calendario", "servicos", "horarios", "bloqueios", "perfil"].forEach((a) => { $("aba-" + a).hidden = a !== nome; });
     if (nome === "resumo") { animarProximo = true; carregarResumo(); }
     else if (nome === "calendario") PainelCalendario.recarregar();
+    else if (nome === "perfil") PainelPerfil.carregar();
     else PainelConfig.carregar(nome);
   }
   document.querySelectorAll("#abas .aba").forEach((b) => b.addEventListener("click", () => trocarAba(b.dataset.aba)));
@@ -235,5 +236,6 @@
 
   PainelCalendario.iniciar(abrirDetalhe, (e) => tratarErro(e));
   PainelConfig.iniciar((e, elemento) => tratarErro(e, elemento));
+  PainelPerfil.iniciar((e, elemento) => tratarErro(e, elemento));
   carregarResumo();
 })();
