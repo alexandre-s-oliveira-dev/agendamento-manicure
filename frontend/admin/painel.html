@@ -7,7 +7,7 @@
   <title>Painel — Agendamentos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/admin.css">
   <script src="../js/tema.js"></script>
@@ -116,6 +116,7 @@
     </div>
     <p id="det-msg" class="mensagem" role="alert" hidden></p>
     <div class="det-acoes">
+      <a class="btn btn-whats btn-pequeno" id="btn-whats" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
       <button type="button" class="btn btn-pequeno" id="btn-confirmar">Confirmar</button>
       <button type="button" class="btn btn-pequeno" id="btn-concluir">Marcar como concluído</button>
       <button type="button" class="btn btn-sec btn-pequeno" id="btn-remarcar">Remarcar</button>
@@ -140,6 +141,7 @@
   </dialog>
 
   <script src="../js/api.js"></script>
+  <script src="../js/whatsapp.js"></script>
   <script src="../js/painel-calendario.js"></script>
   <script src="../js/painel-config.js"></script>
   <script src="../js/painel-perfil.js"></script>

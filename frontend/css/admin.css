@@ -22,7 +22,7 @@ button.item-agenda:hover { border-color: var(--berry); }
 
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 32px; }
 .stat { padding: 16px; background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio); }
-.stat strong { display: block; font-family: var(--serif); font-size: 2.2rem; line-height: 1.1; }
+.stat strong { display: block; font-family: var(--serif); font-size: 1.9rem; line-height: 1.1; }
 .stat span { color: var(--malva); font-size: .9rem; }
 
 .cal-barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
@@ -30,9 +30,9 @@ button.item-agenda:hover { border-color: var(--berry); }
 .modos button { padding: 8px 18px; border: 1.5px solid var(--linha); border-radius: 999px; background: var(--superficie); font: 500 .95rem var(--sans); cursor: pointer; }
 .modos button.ativo { background: var(--ameixa-fundo); border-color: var(--ameixa-fundo); color: #fff; }
 .navegar { display: flex; align-items: center; gap: 10px; }
-.navegar strong { font-family: var(--serif); font-size: 1.3rem; text-transform: capitalize; min-width: 120px; text-align: center; }
+.navegar strong { font-family: var(--serif); font-size: 1.15rem; text-transform: capitalize; min-width: 120px; text-align: center; }
 .dia-bloco { margin-bottom: 20px; }
-.dia-bloco h3 { font-size: 1.25rem; text-transform: capitalize; margin-bottom: .4em; }
+.dia-bloco h3 { font-size: 1.15rem; text-transform: capitalize; margin-bottom: .4em; }
 
 .mes-grade { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
 .mes-dia { position: relative; aspect-ratio: 1; border: 1px solid var(--linha); border-radius: 10px; background: var(--superficie); font: inherit; color: var(--ameixa); cursor: pointer; }
@@ -106,7 +106,7 @@ input[type="checkbox"] { display: inline-block; width: 20px; height: 20px; margi
 .receita-card { padding: 18px; border-radius: var(--raio); border: 1px solid var(--linha); background: var(--superficie); }
 .receita-card.destaque { background: linear-gradient(150deg, #c93d6c, #8f2447); border-color: transparent; color: #fff; }
 .receita-card span { display: block; font-size: .9rem; opacity: .85; }
-.receita-card strong { display: block; font-family: var(--serif); font-size: 2.1rem; line-height: 1.15; }
+.receita-card strong { display: block; font-family: var(--serif); font-size: 1.8rem; line-height: 1.15; }
 .barra-progresso { height: 8px; margin-top: 12px; border-radius: 999px; background: rgba(255, 255, 255, .28); overflow: hidden; }
 .barra-progresso i { display: block; height: 100%; border-radius: 999px; background: #fff; transition: width .6s; }
 .grafico { display: flex; gap: 10px; align-items: stretch; height: 200px; margin-bottom: 32px; padding: 16px 16px 12px; background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio); }

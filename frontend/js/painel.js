@@ -162,6 +162,19 @@
     return d;
   }
 
+  // Texto que já vem escrito quando a profissional chama a cliente pelo WhatsApp.
+  function mensagemWhats(a) {
+    const nome = WhatsApp.primeiroNome(a.nomeCliente);
+    const quando = `${WhatsApp.dataLonga(a.data)} às ${hora(a.horaInicio)}`;
+    if (a.status === "CANCELADO") {
+      return `Olá, ${nome}! Aqui é do ${ESTUDIO.nome}. Seu agendamento de ${a.servicoNome} (${quando}) foi cancelado. Se quiser marcar outro horário, é só me avisar por aqui.`;
+    }
+    if (a.status === "CONCLUIDO") {
+      return `Olá, ${nome}! Aqui é do ${ESTUDIO.nome}. Foi um prazer te atender! Quando quiser marcar um novo horário, é só me chamar por aqui.`;
+    }
+    return `Olá, ${nome}! Aqui é do ${ESTUDIO.nome}. Confirmando seu horário de ${a.servicoNome}: ${quando}. Qualquer dúvida, é só responder por aqui.`;
+  }
+
   function abrirDetalhe(a) {
     atual = a;
     $("det-msg").hidden = true;
@@ -176,6 +189,9 @@
     $("btn-concluir").hidden = a.status !== "CONFIRMADO";
     $("btn-remarcar").hidden = !aberto;
     $("btn-cancelar").hidden = !aberto;
+    const numeroCliente = WhatsApp.numeroBR(a.telefone);
+    $("btn-whats").hidden = !numeroCliente;
+    if (numeroCliente) $("btn-whats").href = WhatsApp.link(numeroCliente, mensagemWhats(a));
     $("detalhe").showModal();
   }
 

@@ -1,6 +1,6 @@
 /* Ponto de entrada: dados do estabelecimento e lista de serviços da página inicial. */
 const ESTABELECIMENTO = {
-  nome: "Studio Bela Mão",
+  nome: ESTUDIO.nome, // o nome e o WhatsApp ficam em js/whatsapp.js
   descricao: "Manicure e pedicure em ambiente tranquilo, com horário marcado e atendimento só para você.",
 };
 
@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("marca-nome").textContent = ESTABELECIMENTO.nome;
   document.getElementById("rodape-nome").textContent = ESTABELECIMENTO.nome;
   document.getElementById("descricao").textContent = ESTABELECIMENTO.descricao;
+  const botaoWhats = document.getElementById("btn-whatsapp-direto");
+  if (botaoWhats) botaoWhats.href = WhatsApp.link(ESTUDIO.whatsapp, "Olá! Gostaria de agendar um horário.");
 
   const lista = document.getElementById("lista-servicos");
 

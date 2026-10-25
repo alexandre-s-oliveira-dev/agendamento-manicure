@@ -95,7 +95,11 @@ const Agendamento = (() => {
       $("sucesso").replaceChildren(...linhas([
         ["Número", `#${String(ag.id).padStart(4, "0")}`], ["Nome", d.nome], ["Serviço", estado.servico.nome],
         ["Data", dataLonga(estado.data)], ["Horário", estado.horario], ["Telefone", d.telefone]]));
+      const numero = `#${String(ag.id).padStart(4, "0")}`;
+      const textoWhats = `Olá! Acabei de agendar pelo site.\n\nServiço: ${estado.servico.nome}\nData: ${dataLonga(estado.data)}\nHorário: ${estado.horario}\nNome: ${d.nome}\nTelefone: ${d.telefone}\nAgendamento: ${numero}`;
+      $("btn-avisar-whats").href = WhatsApp.link(ESTUDIO.whatsapp, textoWhats);
       irParaEtapa(6);
+      $("agendar").scrollIntoView();
     } catch (e) {
       if (e.codigo === "CONFLITO") { await escolherData(estado.data); mostrarMensagem(e.message); }
       else mostrarMensagem(e.message);

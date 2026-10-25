@@ -2,18 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" d="width=device-width, initial-scale=1">
-  <title>Studio Bela Mão — Manicure e Pedicure</title>
-  <meta name="description" d="Agende online sua manicure ou pedicure. Escolha o serviço, o dia e o horário.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Thay Silva — Manicure e Pedicure</title>
+  <meta name="description" content="Agende online sua manicure ou pedicure. Escolha o serviço, o dia e o horário.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tema.js"></script>
 </head>
 <body>
   <header class="topo">
-    <a class="marca" href="#inicio" id="marca-nome">Studio Bela Mão</a>
+    <a class="marca" href="#inicio" id="marca-nome">Studio Thay Silva</a>
     <div class="topo-acoes">
       <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
       <a class="btn btn-pequeno" href="#agendar">Agendar</a>
@@ -41,6 +41,10 @@
 
     <section id="agendar" class="secao">
       <h2>Agende seu horário</h2>
+      <div class="cta-whats">
+        <span>Prefere falar direto com a gente?</span>
+        <a class="btn btn-whats btn-pequeno" id="btn-whatsapp-direto" href="#agendar" target="_blank" rel="noopener">Prefiro agendar pelo WhatsApp</a>
+      </div>
       <ol class="passos" id="passos">
         <li>Serviço</li><li>Data</li><li>Horário</li><li>Seus dados</li><li>Confirmar</li>
       </ol>
@@ -93,9 +97,11 @@
             <span class="brilho" style="--x:78%;--d:.65s"></span>
             <span class="brilho" style="--x:92%;--d:.9s"></span>
           </div>
-          <h3>Agendamento realizado</h3>
-          <p class="dica">Guarde o número abaixo. Se precisar mudar o horário, avise pelo WhatsApp.</p>
+          <h3>Seu horário está marcado!</h3>
+          <p class="dica">Guarde o número abaixo. Agora é só avisar o studio pelo WhatsApp.</p>
           <dl id="sucesso" class="resumo"></dl>
+          <a class="btn btn-whats btn-grande" id="btn-avisar-whats" href="#agendar" target="_blank" rel="noopener">Avisar no WhatsApp</a>
+          <p class="aviso-whats">O WhatsApp abre com a mensagem pronta. Só falta apertar o botão de <strong>enviar</strong>. Se precisar mudar o horário, avise por lá.</p>
           <button type="button" class="btn btn-sec" id="btn-novo">Fazer outro agendamento</button>
         </div>
 
@@ -110,10 +116,11 @@
   </main>
 
   <footer class="rodape">
-    <p id="rodape-nome">Studio Bela Mão</p>
+    <p id="rodape-nome">Studio Thay Silva</p>
   </footer>
 
   <script src="js/api.js"></script>
+  <script src="js/whatsapp.js"></script>
   <script src="js/calendario.js"></script>
   <script src="js/agendamento.js"></script>
   <script src="js/app.js"></script>

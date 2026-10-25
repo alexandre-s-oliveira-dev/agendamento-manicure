@@ -19,21 +19,21 @@
   --selo-cancelado: #ececec;
   --selo-concluido: #e3def2;
   color-scheme: light;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Jost", system-ui, sans-serif;
+  --serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", "Jost", system-ui, sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { margin: 0; background: var(--perola); color: var(--ameixa); font: 400 1rem/1.6 var(--sans); }
-h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; margin: 0 0 .6em; }
-h1 { font-size: clamp(2.4rem, 8vw, 4rem); }
-h2 { font-size: clamp(2rem, 5vw, 2.6rem); }
-h3 { font-size: 1.5rem; }
+html { font-size: 112.5%; scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--perola); color: var(--ameixa); font: 400 1rem/1.65 var(--sans); font-variant-numeric: lining-nums; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(2rem, 6.5vw, 3.2rem); }
+h2 { font-size: clamp(1.7rem, 4.5vw, 2.2rem); }
+h3 { font-size: 1.3rem; }
 p { margin: 0 0 1em; max-width: 60ch; }
 :focus-visible { outline: 3px solid var(--berry); outline-offset: 2px; }
 
 .topo { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: var(--topo-fundo); border-bottom: 1px solid var(--linha); }
-.marca { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--ameixa); text-decoration: none; }
+.marca { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ameixa); text-decoration: none; }
 
 .btn { display: inline-block; border: 0; border-radius: 999px; padding: 14px 28px; background: var(--berry); color: #fff; font: 500 1rem var(--sans); text-decoration: none; cursor: pointer; transition: background .2s; min-height: 48px; }
 .btn:hover { background: var(--berry-escuro); }
@@ -58,7 +58,7 @@ p { margin: 0 0 1em; max-width: 60ch; }
 .grid-servicos { display: grid; gap: 16px; }
 .cartao { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio); }
 .amostra { flex: none; width: 28px; height: 42px; border-radius: 14px 14px 9px 9px / 20px 20px 9px 9px; background: var(--cor, var(--berry)); }
-.cartao h3 { font-size: 1.4rem; margin-bottom: .2em; }
+.cartao h3 { font-size: 1.2rem; margin-bottom: .2em; }
 .cartao p { color: var(--malva); margin-bottom: .5em; font-size: .95rem; }
 .meta { font-weight: 500; font-size: .95rem; margin: 0; }
 
@@ -76,7 +76,7 @@ p { margin: 0 0 1em; max-width: 60ch; }
 .opcao small { color: var(--malva); }
 
 .cal-topo { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.cal-topo strong { font-family: var(--serif); font-size: 1.4rem; text-transform: capitalize; }
+.cal-topo strong { font-family: var(--serif); font-size: 1.2rem; text-transform: capitalize; }
 .cal-nav { width: 44px; height: 44px; border: 1.5px solid var(--linha); border-radius: 50%; background: var(--superficie); font-size: 1.2rem; cursor: pointer; }
 .cal-nav[disabled] { opacity: .35; cursor: not-allowed; }
 .cal-grade { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
@@ -189,3 +189,13 @@ input:focus, textarea:focus { outline: none; border-color: var(--berry); box-sha
   .revelar { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
   .revelar.visivel { opacity: 1; transform: none; }
 }
+
+/* ---- botão verde do WhatsApp e avisos ---- */
+.btn[hidden] { display: none; }
+.btn-whats { background: #1a7f45; color: #fff; }
+.btn-whats:hover { background: #146636; }
+.btn-grande { display: block; width: 100%; padding: 16px 28px; min-height: 58px; font-size: 1.15rem; text-align: center; }
+.cta-whats { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 20px; }
+.aviso-whats { max-width: none; margin: 14px 0 20px; padding: 12px 14px; border-radius: 12px; background: var(--blush); color: var(--ameixa); text-align: center; }
+.etapa[data-etapa="6"] .resumo { font-size: 1.1rem; }
+.horario, .cal-dia, .mes-dia { font-variant-numeric: lining-nums tabular-nums; }
