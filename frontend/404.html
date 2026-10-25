@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Página não encontrada — Studio Thay Silva</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Caminhos começando com "/" funcionam mesmo se o endereço errado tiver várias pastas -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tema.js"></script>
+  <style>
+    .erro-pagina { min-height: 100vh; display: flex; flex-direction: column; }
+    .erro-conteudo { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 40px 20px; text-align: center; }
+    .erro-conteudo p { margin-left: auto; margin-right: auto; }
+    .erro-numero { margin: 8px 0 0; font-family: var(--serif); font-size: clamp(4.5rem, 20vw, 8rem); font-weight: 600; line-height: 1; color: var(--berry); }
+    .erro-conteudo h1 { font-size: clamp(1.7rem, 6vw, 2.4rem); margin-bottom: .3em; }
+    .erro-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 12px; }
+    .erro-unhas { display: flex; gap: 12px; align-items: flex-end; justify-content: center; margin-bottom: 8px; }
+    .erro-unhas .unha { width: 44px; height: 74px; }
+    .erro-unhas .unha:nth-child(2) { height: 88px; }
+    .erro-unhas .unha::after { top: 8px; left: 9px; width: 7px; height: 32px; }
+  </style>
+</head>
+<body class="erro-pagina">
+  <header class="topo">
+    <a class="marca" href="/">Studio Thay Silva</a>
+    <div class="topo-acoes">
+      <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
+    </div>
+  </header>
+
+  <main class="erro-conteudo">
+    <div class="erro-unhas" aria-hidden="true">
+      <span class="unha" style="--cor:#b3315b"></span>
+      <span class="unha" style="--cor:#e9b7c6"></span>
+      <span class="unha" style="--cor:#3a2238"></span>
+    </div>
+    <p class="erro-numero" aria-hidden="true">404</p>
+    <h1>Página não encontrada</h1>
+    <p>O endereço que você abriu não existe ou foi trocado de lugar. Não se preocupe, você pode voltar ao início e agendar seu horário.</p>
+    <div class="erro-botoes">
+      <a class="btn" href="/">Voltar ao início</a>
+      <a class="btn btn-whats" id="btn-whats-404" href="#" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Studio Thay Silva</p>
+  </footer>
+
+  <script src="/js/whatsapp.js"></script>
+  <script>
+    document.getElementById("btn-whats-404").href =
+      WhatsApp.link(ESTUDIO.whatsapp, "Olá! Tive um problema para abrir o site e gostaria de ajuda para agendar.");
+  </script>
+</body>
+</html>
