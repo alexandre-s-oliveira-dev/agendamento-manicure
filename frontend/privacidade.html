@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b3315b">
+  <title>Política de privacidade — Studio Thay Silva</title>
+  <meta name="description" content="Como o Studio Thay Silva usa os dados de quem agenda um horário pelo site.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tema.js"></script>
+  <script src="/js/tamanho-letra.js"></script>
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="/">Studio Thay Silva</a>
+    <div class="topo-acoes">
+      <div class="grupo-letra" role="group" aria-label="Tamanho da letra">
+        <button type="button" class="btn-letra" data-letra-menos aria-label="Diminuir a letra">A−</button>
+        <button type="button" class="btn-letra btn-letra-mais" data-letra-mais aria-label="Aumentar a letra">A+</button>
+      </div>
+      <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
+    </div>
+  </header>
+
+  <main class="secao texto-legal">
+    <h1>Política de privacidade</h1>
+    <p class="dica">Atualizada em 25 de outubro de 2026.</p>
+
+    <p>Este texto explica, de forma simples, como o <strong>Studio Thay Silva</strong> usa os dados de quem agenda um horário por este site.</p>
+
+    <h2>Quais dados pedimos</h2>
+    <ul>
+      <li><strong>Nome</strong> e <strong>telefone (WhatsApp)</strong>, para identificar você e entrar em contato.</li>
+      <li><strong>Observação</strong> (opcional), caso você queira avisar algo sobre o atendimento.</li>
+      <li>O <strong>serviço</strong>, a <strong>data</strong> e o <strong>horário</strong> que você escolheu.</li>
+    </ul>
+    <p>Não pedimos CPF, endereço, e-mail, dados de pagamento nem documentos.</p>
+
+    <h2>Para que usamos</h2>
+    <ul>
+      <li>Reservar e organizar o seu horário.</li>
+      <li>Confirmar, lembrar, remarcar ou cancelar o atendimento, em geral pelo WhatsApp.</li>
+    </ul>
+    <p>Não usamos seus dados para propaganda e não vendemos nem repassamos para outras empresas.</p>
+
+    <h2>Quem vê os seus dados</h2>
+    <p>Somente a profissional responsável pelo studio, dentro do painel protegido por senha. O site e o banco de dados ficam em serviços de hospedagem (Netlify, Render e Neon), que guardam as informações em servidores seguros e podem estar fora do Brasil.</p>
+
+    <h2>Por quanto tempo guardamos</h2>
+    <p>Guardamos o histórico de atendimentos pelo tempo necessário para organizar a agenda e atender você. Você pode pedir a exclusão dos seus dados a qualquer momento.</p>
+
+    <h2>Seus direitos</h2>
+    <p>Pela Lei Geral de Proteção de Dados (LGPD), você pode pedir para saber quais dados temos sobre você, corrigir informações erradas, pedir a exclusão dos dados e tirar dúvidas sobre como eles são usados.</p>
+
+    <h2>Cookies e armazenamento no aparelho</h2>
+    <p>O site não usa cookies de propaganda nem de rastreamento. Guardamos no seu aparelho apenas duas escolhas suas: o modo claro ou escuro e o tamanho da letra.</p>
+
+    <h2>Como falar com a gente sobre seus dados</h2>
+    <p>Para pedir informações, correção ou exclusão, é só chamar o studio pelo WhatsApp:</p>
+    <p><a class="btn btn-whats" id="btn-whats-privacidade" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a></p>
+
+    <p><a href="/">← Voltar ao início</a></p>
+  </main>
+
+  <footer class="rodape">
+    <p>Studio Thay Silva</p>
+  </footer>
+
+  <script src="/js/whatsapp.js"></script>
+  <script>
+    document.getElementById("btn-whats-privacidade").href =
+      WhatsApp.link(ESTUDIO.whatsapp, "Olá! Quero tirar uma dúvida sobre meus dados (privacidade).");
+  </script>
+</body>
+</html>

@@ -32,7 +32,7 @@ h3 { font-size: 1.3rem; }
 p { margin: 0 0 1em; max-width: 60ch; }
 :focus-visible { outline: 3px solid var(--berry); outline-offset: 2px; }
 
-.topo { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: var(--topo-fundo); border-bottom: 1px solid var(--linha); }
+.topo { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; padding: 12px 20px; background: var(--topo-fundo); border-bottom: 1px solid var(--linha); }
 .marca { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ameixa); text-decoration: none; }
 
 .btn { display: inline-block; border: 0; border-radius: 999px; padding: 14px 28px; background: var(--berry); color: #fff; font: 500 1rem var(--sans); text-decoration: none; cursor: pointer; transition: background .2s; min-height: 48px; }
@@ -199,3 +199,19 @@ input:focus, textarea:focus { outline: none; border-color: var(--berry); box-sha
 .aviso-whats { max-width: none; margin: 14px 0 20px; padding: 12px 14px; border-radius: 12px; background: var(--blush); color: var(--ameixa); text-align: center; }
 .etapa[data-etapa="6"] .resumo { font-size: 1.1rem; }
 .horario, .cal-dia, .mes-dia { font-variant-numeric: lining-nums tabular-nums; }
+
+/* ---- botões A− e A+ (tamanho da letra) ---- */
+.grupo-letra { display: flex; gap: 6px; }
+.btn-letra { min-width: 44px; height: 40px; padding: 0 10px; border-radius: 999px; border: 1.5px solid var(--linha); background: var(--superficie); color: var(--ameixa); font: 600 .95rem var(--sans); line-height: 1; cursor: pointer; }
+.btn-letra-mais { font-size: 1.15rem; }
+.btn-letra:hover:not([disabled]) { background: var(--blush); }
+.btn-letra[disabled] { opacity: .4; cursor: not-allowed; }
+
+/* ---- aviso de privacidade e página de texto ---- */
+.aviso-privacidade { max-width: none; margin: 4px 0 0; font-size: .9rem; color: var(--malva); }
+.aviso-privacidade a, .rodape a { color: var(--berry); }
+.texto-legal { max-width: 760px; }
+.texto-legal h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+.texto-legal h2 { font-size: 1.3rem; margin-top: 1.8em; }
+.texto-legal ul { margin: 0 0 1em; padding-left: 1.3em; }
+.texto-legal li { margin-bottom: .4em; }

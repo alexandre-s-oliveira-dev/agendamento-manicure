@@ -14,6 +14,7 @@
   <!-- Caminhos começando com "/" funcionam mesmo se o endereço errado tiver várias pastas -->
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/tema.js"></script>
+  <script src="/js/tamanho-letra.js"></script>
   <style>
     .erro-pagina { min-height: 100vh; display: flex; flex-direction: column; }
     .erro-conteudo { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 40px 20px; text-align: center; }
@@ -31,6 +32,10 @@
   <header class="topo">
     <a class="marca" href="/">Studio Thay Silva</a>
     <div class="topo-acoes">
+      <div class="grupo-letra" role="group" aria-label="Tamanho da letra">
+        <button type="button" class="btn-letra" data-letra-menos aria-label="Diminuir a letra">A−</button>
+        <button type="button" class="btn-letra btn-letra-mais" data-letra-mais aria-label="Aumentar a letra">A+</button>
+      </div>
       <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
     </div>
   </header>

@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Studio Thay Silva — Manicure e Pedicure</title>
   <meta name="description" content="Agende online sua manicure ou pedicure. Escolha o serviço, o dia e o horário.">
+  <meta name="theme-color" content="#b3315b">
+  <!-- Prévia do link (WhatsApp, Facebook, Instagram, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Studio Thay Silva">
+  <meta property="og:title" content="Studio Thay Silva — Manicure e Pedicure">
+  <meta property="og:description" content="Agende online sua manicure ou pedicure. Escolha o serviço, o dia e o horário.">
+  <meta property="og:url" content="https://agendamento-manicure.netlify.app/">
+  <meta property="og:image" content="https://agendamento-manicure.netlify.app/img/previa.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Studio Thay Silva — Manicure e Pedicure">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -13,11 +27,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tema.js"></script>
+  <script src="js/tamanho-letra.js"></script>
 </head>
 <body>
   <header class="topo">
     <a class="marca" href="#inicio" id="marca-nome">Studio Thay Silva</a>
     <div class="topo-acoes">
+      <div class="grupo-letra" role="group" aria-label="Tamanho da letra">
+        <button type="button" class="btn-letra" data-letra-menos aria-label="Diminuir a letra">A−</button>
+        <button type="button" class="btn-letra btn-letra-mais" data-letra-mais aria-label="Aumentar a letra">A+</button>
+      </div>
       <button type="button" class="btn-tema" data-alternar-tema aria-label="Alternar modo escuro"></button>
       <a class="btn btn-pequeno" href="#agendar">Agendar</a>
     </div>
@@ -80,6 +99,7 @@
           <label>Observação (opcional)
             <textarea id="observacao" rows="3" maxlength="300" placeholder="Ex.: prefiro esmalte nude"></textarea>
           </label>
+          <p class="aviso-privacidade">Usamos seu nome e telefone só para o agendamento e para falar com você pelo WhatsApp. Saiba mais na <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</p>
         </div>
 
         <div class="etapa" data-etapa="5" hidden>
@@ -120,6 +140,7 @@
 
   <footer class="rodape">
     <p id="rodape-nome">Studio Thay Silva</p>
+    <p><a href="privacidade.html">Política de privacidade</a></p>
   </footer>
 
   <script src="js/api.js"></script>
