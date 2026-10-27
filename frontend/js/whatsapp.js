@@ -4,7 +4,7 @@
 */
 const ESTUDIO = {
   nome: "Studio Thay Silva",
-  whatsapp: "5584988756449", // país + DDD + número, só dígitos (55 = Brasil, 84 = DDD)
+  whatsapp: "5599981721008", // país + DDD + número, só dígitos (55 = Brasil, 99 = DDD)
 };
 
 const WhatsApp = (() => {
